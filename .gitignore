@@ -1,0 +1,12 @@
+/output/
+/data/
+/notebooks/.ipynb_checkpoints
+/notebooks/plots
+/notebooks/NER_tables.ipynb
+/notebooks/TableLlama_model.ipynb
+/notebooks/label_dataset.ipynb
+/venv/
+
+gpt_utils.py
+
+.DS_Store
