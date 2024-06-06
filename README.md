@@ -1,7 +1,6 @@
 # Wiki-TabNER
 
-This repository contains the dataset and the code for the paper [Wiki-TabNER:Advancing Table Interpretation Through Named
-Entity Recognition](https://arxiv.org/abs/2403.04577).
+This repository contains the dataset and the code for the paper Wiki-TabNER:Integrating NER in Wikipedia tables
 
 Motivated by the simpler tables commonly used for table interpretation tasks, we propose a new dataset annotated with NERs within tables. 
 ![example table](./notebooks/plots/motivation.png) 
@@ -20,15 +19,3 @@ Here, we also provide the file with the ground truth needed for the evaluation o
 We provide evaluation of the current LLMs (GPT 3.5, GPT 4 and Llama2) for evaluation of the NER in tables task.
 The evaluation of the LLMs is in the [ner_prompting.py](ner_prompting.py) file. In order to run the evaluation of the Open-AI models, 
 a configuration of the parameters is required. 
-
-If you use the Wiki-TabNER dataset, please cite the related paper:
-```
-@misc{koleva2024wikitabneradvancing,
-      title={Wiki-TabNER:Advancing Table Interpretation Through Named Entity Recognition}, 
-      author={Aneta Koleva and Martin Ringsquandl and Ahmed Hatem and Thomas Runkler and Volker Tresp},
-      year={2024},
-      eprint={2403.04577},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI}
-}
-```
