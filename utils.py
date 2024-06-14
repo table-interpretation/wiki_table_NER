@@ -482,14 +482,31 @@ def convert_to_iob(tokens, surfaces, labels):
     return mapped
 
 
-def add_mention(ent_text, tab_id, text_lookup, dataset_entities):
+def add_mention(ent_text, tab_id, text_lookup, dataset_entities, entity_idex):
     """
-    Used during the labeling of the dataset.
-    # For every labeled entity save in which table it was mentioned and what is its label
+        Used during the labeling of the dataset.
+        For every labeled entity save in which table it was mentioned and what is its label
     """
 
-    row_index = dataset_entities.index[dataset_entities['entity'] == text_lookup]
-    if not row_index.empty:
-        dataset_entities.loc[row_index, ['mention', 'table_id']] = [ent_text, tab_id]
+    row_index = entity_idex[text_lookup]
+
+    current_mention = dataset_entities.at[row_index, 'mention']
+    current_table_id = dataset_entities.at[row_index, 'table_id']
+
+    # Update mention if different and non-null
+    if pd.isna(current_mention):
+        new_mention = ent_text
+    else:
+        new_mention = current_mention if ent_text == current_mention else f"{current_mention},{ent_text}" if ent_text else current_mention
+
+    # Update table_id if different and non-null
+    if pd.isna(current_table_id):
+        new_table_id = tab_id
+    else:
+        new_table_id = current_table_id if tab_id == current_table_id else f"{current_table_id},{tab_id}" if tab_id else current_table_id
+
+    # Assign the new values back to the DataFrame
+    dataset_entities.at[row_index, 'mention'] = new_mention
+    dataset_entities.at[row_index, 'table_id'] = new_table_id
 
     return dataset_entities

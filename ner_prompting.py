@@ -235,11 +235,11 @@ def main(filtered=False, model="gpt-35-turbo-16k", shot=3, random=False):
     start_time = time.time()
     labels_dict = get_label_dict(filtered=filtered)
 
-    data_path = "data/final_NER_labeled_dataset.csv"
+    data_path = "data/Wiki_TabNER_final_labeled.json"
     with open(data_path, 'r') as f:
         ner_tables = json.load(f)
 
-    train_set, test_set = torch.utils.data.random_split(ner_tables, [49271, 2000], generator=generator)
+    train_set, test_set = torch.utils.data.random_split(ner_tables, [31235, 30000], generator=generator)
 
     if model == "llama-2-7b":
         init_pipeline = init_llama_model(model)
