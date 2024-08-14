@@ -5,7 +5,7 @@ The dataset can be downloaded from [here](https://zenodo.org/records/11654240).
 
 Motivated by the lack of more complex tables in the existing datasets commonly used for table interpretation tasks, we propose a new dataset annotated with NERs within tables. 
 
-## Example table
+### Example table
 
 --- 
 
@@ -66,7 +66,7 @@ When adding the annotations for the named entities, we make sure to look for the
 ```
 
 
-## Extraction of tables
+### Extraction of tables
 
 ---
 
@@ -75,7 +75,7 @@ The tables in the Wiki_TabNER dataset are extracted from the [WikiTables corpus]
 We extracted tables which have on average two linked entities per cell. 
 The extraction of the tables is detailed in the [1.Extract_TabNER_tables notebook](./notebooks/1.Extract_TabNER_tables.ipynb).
 
-## Labeling the entities
+### Labeling the entities
 
 ---
 
@@ -92,6 +92,9 @@ We provide the labeled dataset and the labeled named entities, linked to their W
 
 
 ### Evaluation of LLMs on within tables NER
+
+--- 
+
 We provide evaluation of the current LLMs (GPT 3.5, GPT 4 and Llama2) for evaluation of the NER in tables task.
 The evaluation of the LLMs is in the [ner_prompting.py](ner_prompting.py) file. In order to run the evaluation of the Open-AI models, 
 a configuration of the parameters is required. 
