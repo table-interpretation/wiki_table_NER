@@ -1,7 +1,7 @@
 # Wiki-TabNER
 
 This repository contains the dataset and the code for the paper **Wiki-TabNER:Integrating NER in Wikipedia tables**. 
-The link for downloading the paper can be provided per request.
+The dataset can be downloaded from [here](https://zenodo.org/records/11654240).
 
 Motivated by the lack of more complex tables in the existing datasets commonly used for table interpretation tasks, we propose a new dataset annotated with NERs within tables. 
 
